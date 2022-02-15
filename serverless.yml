@@ -1,0 +1,19 @@
+service: graphqlpoc
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  products:
+      handler: products.productsHandler
+      events:
+      - http:
+          path: /
+          method: post
+          cors: true
+      - http:
+          path: /
+          method: get
+          cors: true
+
